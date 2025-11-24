@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com",
         port: "",
       },
+      {
+        protocol: "http",
+        hostname: "img.drhlife.top",
+        port: "",
+      },
     ],
   },
   serverExternalPackages: ["twitter-api-v2"],

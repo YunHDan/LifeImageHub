@@ -23,7 +23,7 @@ export const SiteHeader = () => {
 					<div className="flex gap-6 items-center">
 						<Avatar />
 						<div className="flex gap-1">
-							<Button
+							{/* <Button
 								asChild
 								size="sm"
 								variant="ghost"
@@ -48,7 +48,7 @@ export const SiteHeader = () => {
 								<Link href="/changelog" className="!text-sm">
 									Changelog
 								</Link>
-							</Button>
+							</Button> */}
 						</div>
 					</div>
 					<div className="flex items-center">
