@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import Image from "next/image";
+// 使用原生 <img>，避免 next/image 优化管线对重定向/签名链接的干扰
 import { useMemo } from "react";
 
 export const polaroidVariants = {
@@ -93,12 +93,14 @@ const Polaroid = ({
 
 				{/* Image container with better styling */}
 				<div className="relative bg-white p-1 rounded-sm h-full flex items-center justify-center">
-					<Image
+					<img
 						width={480}
 						height={640}
 						className="object-contain rounded-sm transition-all duration-300 group-hover:scale-105 max-w-full max-h-full"
 						src={src}
 						alt=""
+						loading="lazy"
+						decoding="async"
 					/>
 
 					{/* Subtle overlay for better visual depth */}

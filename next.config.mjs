@@ -5,12 +5,15 @@ import remarkGfm from "remark-gfm";
 const nextConfig = {
   pageExtensions: ["mdx", "ts", "tsx"],
   reactStrictMode: false,
+  // 允许局域网 IP 访问开发资源，解决 cross origin dev 访问提示
+  allowedDevOrigins: ["http://26.66.249.97:3000"],
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -18,7 +21,7 @@ const nextConfig = {
         port: "",
       },
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "img.drhlife.top",
         port: "",
       },
