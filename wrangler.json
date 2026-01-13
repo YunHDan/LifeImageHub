@@ -1,5 +1,5 @@
 {
-  "name": "ned-im",
+  "name": "lifeimagehub",
   "type": "javascript",
   "compatibility_date": "2026-01-13",
   "build": {
@@ -8,7 +8,7 @@
   },
   "env": {
     "production": {
-      "name": "ned-im-production"
+      "name": "lifeimagehub-production"
     }
   }
 }
