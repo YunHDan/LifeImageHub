@@ -35,6 +35,26 @@ export const navItems = [
 	// { href: "/stack", label: "Stack" },
 ];
 
+// Career 数据类型与占位导出，供组件类型引用使用
+export type CareerItem = {
+	from: number;
+	to: number | null;
+	title: string;
+	company: { name: string; url?: string };
+	location?: string;
+	description?: string;
+	subRoles?: Array<{
+		from: number;
+		to: number | null;
+		title: string;
+		company?: { name: string; url?: string };
+		location?: string;
+		description?: string;
+	}>;
+};
+
+export const careerItems: CareerItem[] = [];
+
 const dateFormat = {
 	day: {
 		year: "numeric" as const,
