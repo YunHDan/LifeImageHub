@@ -3,8 +3,12 @@
   "type": "javascript",
   "compatibility_date": "2026-01-13",
   "build": {
-    "command": "next build",
+    "command": "npx next build",
     "cwd": "./"
+  },
+  "main": ".next/server/app.js",
+  "site": {
+    "bucket": ".next/static"
   },
   "env": {
     "production": {
