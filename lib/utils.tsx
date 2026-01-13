@@ -107,17 +107,20 @@ const changelogItems: ChangelogItem[] = [
 // 从环境变量读取基址，方便一次性切换到对象存储域名
 const PHOTO_BASE = process.env.NEXT_PUBLIC_PHOTO_BASE || ""; // 例如 "https://cdn.example.com"
 
-// 简单解析：如果已是完整 URL 则原样返回；否则把基址和相对路径拼接
-function resolveSrc(s?: string) {
-  if (!s) return s;
-  if (s.startsWith("http://") || s.startsWith("https://")) return s;
-  // 确保没有重复斜杠
+// 必填 src 解析：入参为必填字符串，返回始终为 string
+function resolveRequiredSrc(s: string): string {
+	if (s.startsWith("http://") || s.startsWith("https://")) return s;
 	if (!PHOTO_BASE) {
-		// 未配置公开基址时，直接使用签名 API 的重定向作为图片 src，避免首屏 404
 		const key = s.replace(/^\//, "");
 		return `/api/sign?key=${encodeURIComponent(key)}`;
 	}
 	return PHOTO_BASE.replace(/\/$/, "") + "/" + s.replace(/^\//, "");
+}
+
+// 可选 src 解析：入参可能为空，返回 string 或 undefined（用于 thumb 等可选字段）
+function resolveOptionalSrc(s?: string): string | undefined {
+	if (!s) return undefined;
+	return resolveRequiredSrc(s);
 }
 
 export const changelog = changelogItems
@@ -125,8 +128,10 @@ export const changelog = changelogItems
     ...item,
     photos: item.photos?.map((p) => ({
       ...p,
-      src: resolveSrc(p.src),
-      thumb: resolveSrc(p.thumb),
+			// 保证必填字段与类型：src 必为 string，variant 兜底为 "4x5"
+			src: resolveRequiredSrc(p.src),
+			thumb: resolveOptionalSrc(p.thumb),
+			variant: p.variant ?? "4x5",
     })),
   }))
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
