@@ -1,0 +1,14 @@
+{
+  "name": "ned-im",
+  "type": "javascript",
+  "compatibility_date": "2026-01-13",
+  "build": {
+    "command": "next build",
+    "cwd": "./"
+  },
+  "env": {
+    "production": {
+      "name": "ned-im-production"
+    }
+  }
+}
