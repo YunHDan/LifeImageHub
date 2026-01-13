@@ -1,7 +1,9 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "lifeimagehub",
   "type": "javascript",
   "compatibility_date": "2026-01-13",
+  "pages_build_output_dir": ".next",
   "build": {
     "command": "npx next build",
     "cwd": "./"
