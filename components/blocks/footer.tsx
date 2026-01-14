@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { ContainerInner } from "@/components/blocks/container";
 import { SectionDivider } from "@/components/blocks/section-divider";
@@ -33,14 +34,14 @@ export function Footer() {
 					<div className="pb-8">
 						<ContainerInner className="">
 							<div className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-medium text-muted-foreground pb-4 px-8 border-b border-border/50">
-								{navItems.map((item) => (
+								{/* {navItems.map((item) => (
 									<NavLink key={item.href} href={item.href}>
 										{item.label}
 									</NavLink>
-								))}
-								<NavLink key={"/colophon"} href="/colophon">
+								))} */}
+								{/* <NavLink key={"/colophon"} href="/colophon">
 									Colophon
-								</NavLink>
+								</NavLink> */}
 							</div>
 							<div className="text-sm text-muted-foreground px-8 py-4">
 								<div className="items-center flex flex-wrap gap-4">
@@ -54,6 +55,20 @@ export function Footer() {
 									</Link>
 									<Link
 										href="https://github.com/needim/ned.im"
+										target="_blank"
+										rel="nofollow"
+										className="items-center flex gap-1 dark:hover:text-white"
+									>
+										Thanks nedim{" "}
+										<Image
+											src="/favicon_nedim.ico"
+											alt="nedim"
+											width={16}
+											height={16}
+										/>
+									</Link>
+									<Link
+										href="https://github.com/YunHDan/LifeImageHub"
 										target="_blank"
 										rel="nofollow"
 										className="items-center flex gap-1 dark:hover:text-white"

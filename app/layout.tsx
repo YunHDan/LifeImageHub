@@ -16,8 +16,8 @@ const LexendFont = Lexend({
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ned.im"),
 	title: {
-		default: "Nedim Arabacı",
-		template: "Nedim Arabacı | %s",
+		default: "时间线相册",
+		template: "时间线相册 | %s",
 	},
 	appleWebApp: {
 		title: "ned.im",

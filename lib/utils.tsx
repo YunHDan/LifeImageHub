@@ -74,7 +74,7 @@ type PhotoItem = {
   id?: string;
   src: string;             // 原来是 "/changelog/xxxxx.png"，现在可以是外部 URL 或相对路径
   thumb?: string;          // 可选缩略图 URL（也可以是相对路径）
-  variant?: "1x1" | "4x3" | "4x5" | "9x16";
+  variant?: "1x1" | "4x3" | "4x5" | "9x16" | "5x4" | "16x9";	//横纵比
   caption?: string;
   place?: string;
   date?: string;           // ISO 字符串（可用于排序/展示）
@@ -85,7 +85,7 @@ type PhotoItem = {
 
 type ChangelogItem = {
   date: string;
-  event: string;
+  event?: string;
   title: string;
   description?: string;
   icon?: string;
@@ -96,11 +96,28 @@ type ChangelogItem = {
 const changelogItems: ChangelogItem[] = [
 	{
 		date: "2025-11-24",
-		event: "announcement",
-		title: "个人相册正式成立！",
-		description: "经过数月的筹备和开发，我很高兴地宣布我的个人相册网站正式上线了！在这里，我将分享我生活中的点滴瞬间和摄影作品。欢迎大家前来浏览和交流！",
+		event: "LifeImageHub立项！",
+		title: "Jiangxi Normal University",
+		description: "个人相册正式立项！在这里，我将分享我生活中的点滴瞬间和摄影作品。",
 		dateFormatOptions: dateFormat.day,
-		photos: [{ src:  "/finals1.jpg", variant: "4x5" }],
+		photos: [
+			{ src:  "/finals1.jpg", variant: "4x5" },
+			{ src:  "/atri1.jpg", variant: "16x9" },
+		],
+		icon: "📸",
+	},
+	{
+		date: "2026-01-14",
+		event: "个人相册的本地功能完善！",
+		title: "Jiangxi Normal University",
+		description: "成功适配七牛云对象存储。",
+		dateFormatOptions: dateFormat.day,
+		photos: [
+			{ src:  "/boccirock1.jpg", variant: "9x16" },
+			{ src:  "/boccirock2.jpg", variant: "9x16" },
+			{ src:  "/boccirock3.jpg", variant: "9x16" },
+		],
+		icon: "🛠️",
 	},
 ] as const;
 

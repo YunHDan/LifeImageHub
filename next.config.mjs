@@ -1,12 +1,17 @@
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 
+const IPOPTION = "" // 请修改为你的局域网 IP 地址和端口，如 http://26.66.249.97:9000
+const PROTOCOL = "" // 请修改为你的站点使用的协议 http 或 https
+const IMAGESDOMAIN = "" // 请修改为你的图片域名
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["mdx", "ts", "tsx"],
   reactStrictMode: false,
-  // 允许局域网 IP 访问开发资源，解决 cross origin dev 访问提示
-  allowedDevOrigins: ["http://26.66.249.97:3000"],
+  // 如果要允许局域网 IP 访问开发资源，以解决 cross origin dev 访问提示，
+  // 要恢复allowedDevOrigins: [IPOPTION]的注释
+  // allowedDevOrigins: [IPOPTION],
   logging: {
     fetches: {
       fullUrl: true,
@@ -21,8 +26,8 @@ const nextConfig = {
         port: "",
       },
       {
-        protocol: "https",
-        hostname: "img.drhlife.top",
+        protocol: PROTOCOL,
+        hostname: IMAGESDOMAIN,
         port: "",
       },
     ],

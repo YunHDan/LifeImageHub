@@ -21,7 +21,7 @@ export function Avatar({
 			{...props}
 		>
 			<Image
-				src="/avatar-dark.svg"
+				src="/runfar-dark.svg"
 				alt=""
 				sizes={large ? "4rem" : "2.25rem"}
 				width="140"
@@ -33,7 +33,7 @@ export function Avatar({
 				priority
 			/>
 			<Image
-				src="/avatar-light.svg"
+				src="/runfar-light.svg"
 				alt=""
 				sizes={large ? "4rem" : "2.25rem"}
 				width="140"
@@ -45,7 +45,7 @@ export function Avatar({
 				priority
 			/>
 			<Image
-				src="https://avatars.githubusercontent.com/needim"
+				src="https://avatars.githubusercontent.com/YunHDan"
 				alt=""
 				sizes={large ? "4rem" : "2.25rem"}
 				width="140"

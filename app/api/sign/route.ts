@@ -60,7 +60,12 @@ export async function GET(req: Request) {
     const now = Date.now();
     const cached = cache.get(key);
     if (cached && cached.expiresAt > now) {
-      return NextResponse.json({ url: cached.url });
+      // 注意：缓存命中时也要遵循 mode。
+      // 否则 <img src="/api/sign?..."> 会拿到 JSON 响应，导致刷新后图片无法显示。
+      if (mode === "json") {
+        return NextResponse.json({ url: cached.url });
+      }
+      return NextResponse.redirect(cached.url);
     }
 
     // 构造未签名的基础 URL（注意要对 key 做 encodeURI）
