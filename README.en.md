@@ -95,7 +95,7 @@ And use keys like `"/xxx.jpg"` or `"xxx.jpg"` in your data.
 
 ### Option B: Qiniu private bucket (signed URLs)
 
-If your photos are stored in a Qiniu private bucket (or you want time-limited signed URLs), configure:
+If your photos are stored in a Qiniu private bucket (or you want time-limited signed URLs), set configure in `.env.local`:
 
 - `QINIU_ACCESS_KEY`
 - `QINIU_SECRET_KEY`
