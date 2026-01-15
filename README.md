@@ -93,7 +93,7 @@ NEXT_PUBLIC_PHOTO_BASE=http://localhost:3000
 
 ### 方案 B：七牛私有空间（需要签名）
 
-当你的图片放在七牛私有空间（或你希望用临时签名 URL 控制访问）时，配置：
+当你的图片放在七牛私有空间（或你希望用临时签名 URL 控制访问）时，在.env.local配置：
 
 - `QINIU_ACCESS_KEY`
 - `QINIU_SECRET_KEY`
