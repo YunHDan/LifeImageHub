@@ -85,8 +85,8 @@ type PhotoItem = {
 
 type ChangelogItem = {
   date: string;
-  event?: string;
-  title: string;
+  event: string;
+  title?: string;
   description?: string;
   icon?: string;
   dateFormatOptions?: Intl.DateTimeFormatOptions; //(typeof dateFormat)[keyof typeof dateFormat]

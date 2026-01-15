@@ -10,6 +10,8 @@ export const polaroidVariants = {
 	"4x5": "w-20 h-28",
 	"4x3": "w-20 h-20",
 	"9x16": "w-20 h-36",
+	"5x4": "w-20 h-20",
+	"16x9": "w-20 h-14",
 };
 
 const Polaroid = ({
@@ -84,8 +86,8 @@ const Polaroid = ({
 		>
 			<motion.div
 				className={cn(
-					"w-auto h-auto relative overflow-hidden",
-					fullscreen ? "h-auto min-w-72" : variantClasses,
+					"relative overflow-hidden",
+					fullscreen ? "w-auto h-auto min-w-72" : variantClasses,
 				)}
 			>
 				{/* Polaroid paper background */}
